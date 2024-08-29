@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/welcome_Screen"
-        android:name="com.example.kotln1.welcome_Screen"
+        android:name="com.example.kotln1.ui.fragments.WelcomeScreenFragment"
         android:label="fragment_welcome__screen"
         tools:layout="@layout/fragment_welcome__screen" >
         <action
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/login"
-        android:name="com.example.kotln1.Login"
+        android:name="com.example.kotln1.ui.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/register"
-        android:name="com.example.kotln1.register"
+        android:name="com.example.kotln1.ui.fragments.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -71,7 +71,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPassword"
-        android:name="com.example.kotln1.forgotPass"
+        android:name="com.example.kotln1.ui.fragments.ForgotPasswodFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_pass" >
         <action
@@ -93,7 +93,7 @@
     </fragment>
     <fragment
         android:id="@+id/otp2"
-        android:name="com.example.kotln1.otp"
+        android:name="com.example.kotln1.ui.fragments.OtpFragment"
         android:label="otp" >
         <action
             android:id="@+id/action_otp2_to_newPass"
@@ -114,7 +114,7 @@
     </fragment>
     <fragment
         android:id="@+id/newPass"
-        android:name="com.example.kotln1.newPass"
+        android:name="com.example.kotln1.ui.fragments.NewPasswordFragment"
         android:label="fragment_new_pass"
         tools:layout="@layout/fragment_new_pass" >
         <action
@@ -136,7 +136,7 @@
     </fragment>
     <fragment
         android:id="@+id/articleList"
-        android:name="com.example.kotln1.ArticleList"
+        android:name="com.example.kotln1.ui.fragments.ArticleListFragment"
         android:label="ArticleList">
 
 
@@ -170,7 +170,7 @@
     </fragment>
     <fragment
         android:id="@+id/passChanged"
-        android:name="com.example.kotln1.passChanged"
+        android:name="com.example.kotln1.ui.fragments.PasswordChangeSuccessFragment"
         android:label="passChanged" >
         <action
             android:id="@+id/changedToLogin"
@@ -182,7 +182,7 @@
     </fragment>
     <fragment
         android:id="@+id/articleDetails"
-        android:name="com.example.kotln1.ArticleDetails"
+        android:name="com.example.kotln1.ui.fragments.ArticleDetailsFragment"
         android:label="ArticleDetails" >
 
         <argument
@@ -221,7 +221,7 @@
     <fragment
 
         android:id="@+id/webActivity"
-        android:name="com.example.kotln1.WebActivity"
+        android:name="com.example.kotln1.ui.fragments.WebActivityFragment"
         android:label="fragment_web_activity"
         tools:layout="@layout/fragment_web_activity" >
 
