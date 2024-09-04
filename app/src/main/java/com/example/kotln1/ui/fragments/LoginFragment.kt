@@ -28,7 +28,7 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(layoutInflater)
         val view = binding.root
 
-        val db = Room.databaseBuilder(binding.root.context, DataBaseHelper::class.java, "users").allowMainThreadQueries().build()
+        val db = Room.databaseBuilder(binding.root.context, DataBaseHelper::class.java, "users").build()
 
         val userDao = db.userDao()
         binding.forgotPass.setOnClickListener{

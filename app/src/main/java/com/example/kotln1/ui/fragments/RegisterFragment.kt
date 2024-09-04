@@ -13,6 +13,9 @@ import com.example.kotln1.Models.database.DataBaseHelper
 import com.example.kotln1.databinding.FragmentRegisterBinding
 import com.example.kotln1.ui.fragments.RegisterFragmentDirections.Companion.actionRegisterToLogin
 import com.example.kotln1.ui.fragments.RegisterFragmentDirections.Companion.actionRegisterToWelcomeScreen
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class RegisterFragment : Fragment() {
@@ -96,11 +99,15 @@ class RegisterFragment : Fragment() {
 
             else{
 
+                CoroutineScope(Dispatchers.IO).launch {
+                    val user = User(
+                        binding.username.text.toString(),
+                        binding.email.text.toString(),
+                        binding.password.text.toString()
+                    )
 
-                val user = User(binding.username.text.toString(), binding.email.text.toString(), binding.password.text.toString())
-
-                userDao.insertAll(user)
-
+                    userDao.insertAll(user)
+                }
 
 
 

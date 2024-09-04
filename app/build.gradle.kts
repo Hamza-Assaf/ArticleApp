@@ -59,7 +59,8 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.room.rxjava2)
-
+    implementation(libs.kotlinx.coroutines.rx2)
+    implementation(libs.kotlinx.coroutines.android.v164)
     implementation(libs.androidx.room.rxjava3)
 
     implementation(libs.androidx.room.guava)
