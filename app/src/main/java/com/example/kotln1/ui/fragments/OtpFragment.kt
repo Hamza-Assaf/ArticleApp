@@ -25,7 +25,8 @@ class OtpFragment : Fragment() {
 
         binding.verifyButton.setOnClickListener{
 
-            val action = actionOtp2ToNewPass()
+            val email = arguments?.getString("Email")
+            val action = actionOtp2ToNewPass(email.toString())
             findNavController().navigate(action)
 
         }

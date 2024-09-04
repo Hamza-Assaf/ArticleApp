@@ -10,11 +10,13 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.room.Room
 import com.example.kotln1.api.APIInterface
 import com.example.kotln1.api.ApiClient
-import com.example.kotln1.data.Article
+import com.example.kotln1.Models.Article
 import com.example.kotln1.adapters.ArticleAdapter
-import com.example.kotln1.data.ResponseModel
+import com.example.kotln1.Models.ResponseModel
+import com.example.kotln1.Models.database.DataBaseHelper
 import com.example.kotln1.databinding.FragmentArticleListBinding
 import com.example.kotln1.ui.fragments.ArticleListFragmentDirections.Companion.actionListToLogin
 import retrofit2.Call
@@ -79,6 +81,16 @@ class ArticleListFragment : Fragment() {
             findNavController().navigate(action)
 
         }
+
+        val db = Room.databaseBuilder(binding.root.context, DataBaseHelper::class.java, "users").allowMainThreadQueries().build()
+
+        val userDao = db.userDao()
+        val email = arguments?.getString("Email")
+
+        if (email != null) binding.welcomeText.text = "Welcome " + userDao.findUserByEmail(email).userName
+
+
+
 
 
 

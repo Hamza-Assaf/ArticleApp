@@ -1,8 +1,9 @@
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id ("androidx.navigation.safeargs.kotlin")
+    id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-kapt")
+
 
 }
 
@@ -11,7 +12,7 @@ android {
     compileSdk = 34
 
 
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
     }
     defaultConfig {
@@ -49,16 +50,31 @@ android {
 
 dependencies {
 
+    val room_version = "2.6.1"
 
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.common)
+    annotationProcessor(libs.androidx.room.compiler)
+    kapt("androidx.room:room-compiler:2.6.1")
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.room.rxjava2)
 
-    implementation (libs.glide)
-    implementation (libs.gson)
-    implementation (libs.retrofit)
-    implementation (libs.converter.gson)
-    implementation (libs.lottie.v340)
-    debugImplementation (libs.library)
-    releaseImplementation (libs.library.no.op)
-    implementation (libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.room.rxjava3)
+
+    implementation(libs.androidx.room.guava)
+
+    testImplementation(libs.androidx.room.testing)
+
+    implementation(libs.androidx.room.paging)
+    implementation(libs.glide)
+    implementation(libs.gson)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.lottie.v340)
+    debugImplementation(libs.library)
+    releaseImplementation(libs.library.no.op)
+    implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.dynamic.features.fragment)
     implementation(libs.firebase.crashlytics.buildtools)

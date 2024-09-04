@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.kotln1.data.Article
+import com.example.kotln1.Models.Article
 import com.example.kotln1.databinding.ArticleCardBinding
 import com.example.kotln1.ui.fragments.ArticleListFragmentDirections
 

@@ -42,10 +42,22 @@
             app:popUpTo="@id/login" />
         <action
             android:id="@+id/action_login_to_articleList"
-            app:destination="@id/articleList" />
+            app:destination="@id/articleList"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_login_to_welcome_Screen"
             app:destination="@id/welcome_Screen"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/login" />
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/register"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
@@ -71,9 +83,8 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPassword"
-        android:name="com.example.kotln1.ui.fragments.ForgotPasswodFragment"
-        android:label="fragment_forgot_password"
-        tools:layout="@layout/fragment_forgot_pass" >
+        android:name="com.example.kotln1.ui.fragments.ForgotPasswordFragment"
+        android:label="fragment_forgot_password">
         <action
             android:id="@+id/action_forgotPassword_to_otp2"
             app:destination="@id/otp2"
@@ -95,6 +106,12 @@
         android:id="@+id/otp2"
         android:name="com.example.kotln1.ui.fragments.OtpFragment"
         android:label="otp" >
+
+        <argument
+            android:name="Email"
+            app:argType="string"
+            android:defaultValue=" "/>
+
         <action
             android:id="@+id/action_otp2_to_newPass"
             app:destination="@id/newPass"
@@ -117,6 +134,11 @@
         android:name="com.example.kotln1.ui.fragments.NewPasswordFragment"
         android:label="fragment_new_pass"
         tools:layout="@layout/fragment_new_pass" >
+
+        <argument
+            android:name="Email"
+            app:argType="string"
+            android:defaultValue=" "/>
         <action
             android:id="@+id/action_newPass_to_passChanged"
             app:destination="@id/passChanged"
@@ -139,7 +161,10 @@
         android:name="com.example.kotln1.ui.fragments.ArticleListFragment"
         android:label="ArticleList">
 
-
+        <argument
+            android:name="Email"
+            app:argType="string"
+            android:defaultValue=" "/>
 
 
 

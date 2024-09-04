@@ -46,15 +46,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="0dp"
-
             android:paddingBottom="10dp"
             app:boxBackgroundMode="none">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="355dp"
+                android:layout_height="56dp"
                 android:hint="Username"
                 android:layout_weight="1"
+                android:inputType="textEmailAddress"
                 />
         </com.google.android.material.textfield.TextInputLayout>
     </com.google.android.material.card.MaterialCardView>

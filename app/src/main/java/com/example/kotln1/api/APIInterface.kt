@@ -1,7 +1,7 @@
 package com.example.kotln1.api
 
 
-import com.example.kotln1.data.ResponseModel
+import com.example.kotln1.Models.ResponseModel
 import retrofit2.Call
 
 import retrofit2.http.GET
