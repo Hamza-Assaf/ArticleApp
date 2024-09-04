@@ -14,9 +14,14 @@ import com.example.kotln1.ui.fragments.LoginFragmentDirections.Companion.actionL
 import com.example.kotln1.ui.fragments.LoginFragmentDirections.Companion.actionLoginToArticleList
 import com.example.kotln1.ui.fragments.LoginFragmentDirections.Companion.actionLoginToWelcomeScreen
 import com.example.kotln1.ui.fragments.LoginFragmentDirections.Companion.actionLoginToRegister
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
+     var validEmail: Boolean = false
 
 
     override fun onCreateView(
@@ -39,28 +44,44 @@ class LoginFragment : Fragment() {
 
         }
 
-        binding.loginButton.setOnClickListener{
+            binding.loginButton.setOnClickListener{
 
+                CoroutineScope(Dispatchers.IO).launch {
+                    validEmail = userDao.checkCredentials(
+                        binding.email.text.toString(),
+                        binding.password.text.toString()
+                    )
+                }
+                if (validEmail)
+                 {
 
-            if(userDao.checkCredentials(binding.email.text.toString(), binding.password.text.toString())){
+                    Toast.makeText(binding.root.context, "Login Successful", Toast.LENGTH_SHORT)
+                        .show()
 
-                Toast.makeText(binding.root.context, "Login Successful", Toast.LENGTH_SHORT).show()
+                    val action = actionLoginToArticleList(binding.email.text.toString())
+                    findNavController().navigate(action)
 
-                val action = actionLoginToArticleList(binding.email.text.toString())
-                findNavController().navigate(action)
+                } else if (binding.email.text.toString()
+                        .isEmpty() || binding.password.text.toString().isEmpty()
+                ) {
 
+                    Toast.makeText(
+                        binding.root.context,
+                        "Please fill all fields",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                } else {
+
+                    Toast.makeText(
+                        binding.root.context,
+                        "Wrong Email or Password",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                }
             }
 
-            else if(binding.email.text.toString().isEmpty() || binding.password.text.toString().isEmpty()){
-
-                Toast.makeText(binding.root.context, "Please fill all fields", Toast.LENGTH_SHORT).show()
-
-        }
-            else{
-
-                Toast.makeText(binding.root.context, "Wrong Email or Password", Toast.LENGTH_SHORT).show()
-
-            }
 
 
 
@@ -68,9 +89,6 @@ class LoginFragment : Fragment() {
 
 
 
-
-
-        }
 
         binding.backButton.backButton.setOnClickListener{
 
