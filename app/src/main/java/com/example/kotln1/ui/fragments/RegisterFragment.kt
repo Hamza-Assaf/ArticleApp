@@ -20,6 +20,7 @@ class RegisterFragment : Fragment() {
 
 
     private lateinit var binding: FragmentRegisterBinding
+    val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\$"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +32,7 @@ class RegisterFragment : Fragment() {
         val db = Room.databaseBuilder(binding.root.context, DataBaseHelper::class.java, "users").allowMainThreadQueries().build()
 
         val userDao = db.userDao()
+
 
 
 
@@ -58,6 +60,12 @@ class RegisterFragment : Fragment() {
             if(binding.username.text.toString().isEmpty() || binding.email.text.toString().isEmpty() || binding.password.text.toString().isEmpty() || binding.confirmPassword.text.toString().isEmpty()){
 
                 Toast.makeText(binding.root.context, "Please fill all fields", Toast.LENGTH_SHORT).show()
+
+            }
+
+            else if(!isValidEmail(binding.email.text.toString())){
+
+                Toast.makeText(binding.root.context, "Invalid Email", Toast.LENGTH_SHORT).show()
 
             }
             else if( binding.password.text.toString().length < 8  ){
@@ -124,6 +132,12 @@ class RegisterFragment : Fragment() {
 
 
         return view
+    }
+
+    fun isValidEmail(email : String) : Boolean {
+
+return email.matches(emailRegex.toRegex())
+
     }
 
 
