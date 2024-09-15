@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.kotln1.databinding.FragmentWelcomeScreenBinding
+import com.example.kotlin1.databinding.FragmentWelcomeScreenBinding
 import com.example.kotln1.ui.fragments.WelcomeScreenFragmentDirections.Companion.actionGotoLogin
 import com.example.kotln1.ui.fragments.WelcomeScreenFragmentDirections.Companion.actionGotoRegister
 

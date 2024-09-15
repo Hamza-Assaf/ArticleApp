@@ -1,14 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
     id("androidx.navigation.safeargs.kotlin")
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp") version "2.0.20-1.0.24"
 
 
 }
 
 android {
-    namespace = "com.example.kotln1"
+    namespace = "com.example.kotlin1"
     compileSdk = 34
 
 
@@ -16,7 +17,7 @@ android {
         viewBinding = true
     }
     defaultConfig {
-        applicationId = "com.example.kotln1"
+        applicationId = "com.example.kotlin1"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -39,39 +40,34 @@ android {
 
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 
 }
 
 dependencies {
 
-    val room_version = "2.6.1"
 
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.common)
-    annotationProcessor(libs.androidx.room.compiler)
-    kapt("androidx.room:room-compiler:2.6.1")
+    implementation(libs.androidx.monitor)
+    implementation(libs.androidx.junit.ktx)
     implementation(libs.androidx.room.ktx)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.room.rxjava2)
     implementation(libs.kotlinx.coroutines.rx2)
     implementation(libs.kotlinx.coroutines.android.v164)
     implementation(libs.androidx.room.rxjava3)
-
     implementation(libs.androidx.room.guava)
-
     testImplementation(libs.androidx.room.testing)
+    implementation (libs.androidx.room.runtime)
 
     implementation(libs.androidx.room.paging)
     implementation(libs.glide)
-    implementation(libs.gson)
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
     implementation(libs.lottie.v340)
     debugImplementation(libs.library)
     releaseImplementation(libs.library.no.op)
@@ -84,10 +80,26 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.design)
+
+
+    // To use Kotlin annotation processing tool (kapt)
+    ksp(libs.androidx.room.compiler )
+
+    //dagger hilt
+    implementation(libs.google.dagger.compiler)
+    ksp(libs.google.dagger.compiler)
+    implementation(libs.androidx.hilt.navigation.fragment)
+
+
+    //retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.gson)
+
+
+    implementation (libs.androidx.runtime.livedata)
+    implementation (libs.androidx.lifecycle.viewmodel.compose)
 
 
 }

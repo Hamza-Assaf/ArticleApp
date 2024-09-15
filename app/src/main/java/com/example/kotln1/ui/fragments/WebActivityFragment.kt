@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebSettings
-import com.example.kotln1.databinding.FragmentWebActivityBinding
 import android.annotation.SuppressLint
+import com.example.kotlin1.databinding.FragmentWebActivityBinding
 
 
 class WebActivityFragment : Fragment() {

@@ -8,9 +8,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
-import com.example.kotln1.Models.User
-import com.example.kotln1.Models.database.DataBaseHelper
-import com.example.kotln1.databinding.FragmentRegisterBinding
+import com.example.kotlin1.databinding.FragmentRegisterBinding
+import com.example.kotln1.database.User
+import com.example.kotln1.database.DataBaseHelper
 import com.example.kotln1.ui.fragments.RegisterFragmentDirections.Companion.actionRegisterToLogin
 import com.example.kotln1.ui.fragments.RegisterFragmentDirections.Companion.actionRegisterToWelcomeScreen
 import kotlinx.coroutines.CoroutineScope
@@ -23,7 +23,7 @@ class RegisterFragment : Fragment() {
 
 
     private lateinit var binding: FragmentRegisterBinding
-    val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\$"
+    private val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\$"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -141,7 +141,7 @@ class RegisterFragment : Fragment() {
         return view
     }
 
-    fun isValidEmail(email : String) : Boolean {
+    private fun isValidEmail(email : String) : Boolean {
 
 return email.matches(emailRegex.toRegex())
 

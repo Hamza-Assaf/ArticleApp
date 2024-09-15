@@ -158,7 +158,7 @@
     </fragment>
     <fragment
         android:id="@+id/articleList"
-        android:name="com.example.kotln1.ui.fragments.ArticleListFragment"
+        android:name="com.example.kotln1.features.articles.ArticleListFragment"
         android:label="ArticleList">
 
         <argument

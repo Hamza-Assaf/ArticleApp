@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
-import com.example.kotln1.Models.database.DataBaseHelper
-import com.example.kotln1.databinding.FragmentLoginBinding
+import com.example.kotlin1.databinding.FragmentLoginBinding
+import com.example.kotln1.database.DataBaseHelper
 import com.example.kotln1.ui.fragments.LoginFragmentDirections.Companion.actionLoginToForgotPassword
 import com.example.kotln1.ui.fragments.LoginFragmentDirections.Companion.actionLoginToArticleList
 import com.example.kotln1.ui.fragments.LoginFragmentDirections.Companion.actionLoginToWelcomeScreen
@@ -21,7 +21,7 @@ import kotlinx.coroutines.launch
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
-     var validEmail: Boolean = false
+     private var validEmail: Boolean = false
 
 
     override fun onCreateView(

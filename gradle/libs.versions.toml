@@ -2,9 +2,13 @@
 agp = "8.5.1"
 cardviewV7 = "28.0.0"
 converterGson = "2.1.0"
+daggerCompilerVersion = "2.51.1"
 design = "26.1.0"
 glide = "4.16.0"
 gson = "2.10.1"
+hiltAndroid = "2.44"
+hiltAndroidGradlePlugin = "2.48.1"
+hiltNavigationFragment = "1.2.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -15,22 +19,33 @@ kotlinxCoroutinesAndroid = "1.7.1"
 kotlinxCoroutinesAndroidVersion = "1.6.4"
 kotlinxCoroutinesRx2 = "1.6.4"
 library = "4.0.0"
+lifecycleViewmodelCompose = "2.8.5"
 lottie = " 1.0.0"
 lottieVersion = "3.4.0"
 material = "1.12.0"
 activity = "1.9.1"
 constraintlayout = "2.1.4"
+navigationSafeArgsGradlePlugin = "2.3.5"
+navigationSafeArgsGradlePluginVersion = "2.8.0"
 navigationUiKtx = "2.7.7"
 retrofit = "2.11.0"
 firebaseCrashlyticsBuildtools = "3.0.2"
+roomCompilerVersion = "2.5.2"
 roomRuntime = "2.6.1"
 roomCommon = "2.6.1"
+runtimeLivedata = "1.7.1"
+monitor = "1.7.2"
+junitKtx = "1.2.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-hilt-navigation-fragment = { module = "androidx.hilt:hilt-navigation-fragment", version.ref = "hiltNavigationFragment" }
+androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodelCompose" }
 androidx-navigation-dynamic-features-fragment = { module = "androidx.navigation:navigation-dynamic-features-fragment", version.ref = "navigationUiKtx" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationUiKtx" }
 androidx-navigation-safe-args-gradle-plugin = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigationUiKtx" }
+androidx-navigation-safe-args-gradle-plugin-v235 = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigationSafeArgsGradlePlugin" }
+androidx-navigation-safe-args-gradle-plugin-v280 = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigationSafeArgsGradlePluginVersion" }
 androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "navigationUiKtx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtx" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
@@ -41,11 +56,15 @@ androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "
 androidx-room-rxjava2 = { module = "androidx.room:room-rxjava2", version.ref = "roomRuntime" }
 androidx-room-rxjava3 = { module = "androidx.room:room-rxjava3", version.ref = "roomRuntime" }
 androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "roomRuntime" }
+androidx-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "runtimeLivedata" }
 cardview-v7 = { module = "com.android.support:cardview-v7", version.ref = "cardviewV7" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 design = { module = "com.android.support:design", version.ref = "design" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+google-dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "daggerCompilerVersion" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+hilt-android = { module = "com.goodle.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePlugin" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -63,6 +82,9 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
 androidx-room-common = { group = "androidx.room", name = "room-common", version.ref = "roomCommon" }
+room-compiler-v252 = { module = "androidx.room:room-compiler", version.ref = "roomCompilerVersion" }
+androidx-monitor = { group = "androidx.test", name = "monitor", version.ref = "monitor" }
+androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

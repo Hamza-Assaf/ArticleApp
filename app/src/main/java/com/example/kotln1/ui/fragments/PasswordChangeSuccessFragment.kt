@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.kotln1.databinding.FragmentPassChangedBinding
+import com.example.kotlin1.databinding.FragmentPassChangedBinding
 import com.example.kotln1.ui.fragments.PasswordChangeSuccessFragmentDirections.Companion.changedToLogin
 
 class PasswordChangeSuccessFragment : Fragment() {

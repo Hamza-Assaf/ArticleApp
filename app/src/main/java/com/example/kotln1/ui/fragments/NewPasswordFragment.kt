@@ -8,8 +8,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
-import com.example.kotln1.Models.database.DataBaseHelper
-import com.example.kotln1.databinding.FragmentNewPassBinding
+import com.example.kotlin1.databinding.FragmentNewPassBinding
+import com.example.kotln1.database.DataBaseHelper
 import com.example.kotln1.ui.fragments.NewPasswordFragmentDirections.Companion.actionNewPassToOtp2
 import com.example.kotln1.ui.fragments.NewPasswordFragmentDirections.Companion.actionNewPassToPassChanged
 

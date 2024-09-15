@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.kotlin1.databinding.FragmentArticleDetailsBinding
 import com.example.kotln1.ui.fragments.ArticleDetailsFragmentDirections.Companion.actionArticleDetailsToArticleList
-import com.example.kotln1.databinding.FragmentArticleDetailsBinding
 
 
 class ArticleDetailsFragment : Fragment() {

@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.kotln1.databinding.FragmentOtpBinding
+import com.example.kotlin1.databinding.FragmentOtpBinding
 import com.example.kotln1.ui.fragments.OtpFragmentDirections.Companion.actionOtp2ToForgotPassword
 import com.example.kotln1.ui.fragments.OtpFragmentDirections.Companion.actionOtp2ToNewPass
 
